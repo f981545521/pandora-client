@@ -14,4 +14,7 @@ public interface OrderClient {
     @RequestMapping(value = "/info/getOrder", method = RequestMethod.POST)
     public String getOrder();
 
+    @RequestMapping(value = "/info/addOrder", method = RequestMethod.GET)
+    public String addOrder();
+
 }

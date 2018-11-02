@@ -22,4 +22,9 @@ public class OrderCommonService {
         return orderClient.getOrder();
     }
 
+    public String addOrderInfo(){
+        logger.info("Client 添加订单 ------------->");
+        return orderClient.addOrder();
+    }
+
 }
