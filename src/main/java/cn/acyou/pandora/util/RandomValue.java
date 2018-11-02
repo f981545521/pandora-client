@@ -1,5 +1,8 @@
 package cn.acyou.pandora.util;
 
+import org.joda.time.DateTime;
+
+import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
@@ -103,6 +106,18 @@ public class RandomValue {
         Random r = new Random();
         return r.nextInt(2);
         //return Math.random() > 0.5 ? 1 : 0;
+    }
+
+    public static Date randomRangeDate(String startStr, String endStr) {
+        long startTime = (new DateTime(startStr)).toDate().getTime();
+        long endTime = (new DateTime(endStr)).toDate().getTime();
+        double randomDate = Math.random() * (double)(endTime - startTime) + (double)startTime;
+        DateTime random = new DateTime(Math.round(randomDate));
+        return random.toDate();
+    }
+
+    public static Date randomDate() {
+        return randomRangeDate("1990-01-01", "2018-12-31");
     }
 
     public static void main(String[] args) {
